@@ -8,19 +8,21 @@ The model is a re-trained version of the ResNet-18 model and was trained on an i
    model.pth.tar: https://drive.google.com/file/d/16PlL_Pz6d0QKLztq8xe017JCY99YOt2z/view?usp=sharing
 3. Download this folder (testing images): https://drive.google.com/drive/folders/1AJYann2UZXb3ldXdVuL4jaFS5wxKIurp?usp=sharing
 4. Put your model into jetson-inference/python/training/classification/models/chinese_character_inverted
-5. Now you can run the model as previously stated.
-7. Put your data into jetson-inference/python/training/classification/data
-8. Open up terminal.
-9. Export your model to ONNX:
-
-   Make you are in python/training/classification and run:
-```
-python3 onnx_export.py --model=models/chinese_character_inverted
-```
-   If you run into issues while exporting your model to ONNX, open a docker container and do the same thing. Command to open the docker container:
-   
+6. Put your data into jetson-inference/python/training/classification/data
+7. Open up terminal.
+8. Open up a docker container and export your model to ONNX. Make sure you're in jetson-inference and run 
 ```
 ./docker/run.sh
+```
+to open up a docker container. Then run 
+```
+cd python/training/classification
+```
+
+Once you are in the right directory, run the following command to export your model to ONNX.
+
+```
+python3 onnx_export.py --model=models/chinese_character_inverted
 ```
 
    Be sure to exit the docker container before you run the model.
