@@ -4,8 +4,7 @@ The model is a re-trained version of the ResNet-18 model and was trained on an i
 
 # How to run characterAI
 1. In order to test this model, be sure that you have a Jetson-Nano and Python3 and the jetson-inference library installed on your nano.
-2. Download both the resnet18.onnx and model.pth.tar files:
-   resnet18.onnx: https://drive.google.com/file/d/11GwVvQ_P1csDj5rhlE4R_8Y3EWtnsLAy/view?usp=sharing
+2. Download the model.pth.tar files:
    model.pth.tar: https://drive.google.com/file/d/16PlL_Pz6d0QKLztq8xe017JCY99YOt2z/view?usp=sharing
 3. Download this folder (testing images): https://drive.google.com/drive/folders/1AJYann2UZXb3ldXdVuL4jaFS5wxKIurp?usp=sharing
 4. Put your models into jetson-inference/python/training/classification/models/chinese_character_inverted
