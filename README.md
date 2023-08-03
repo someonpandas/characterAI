@@ -17,8 +17,8 @@ cd ~/jetson-inference/python/training/classification
 ```
 8. Set these two variables in the terminal. They will store the locations of the data and models that you will be using:
 ```
-NET = models/chinese_character_inverted
-DATASET = data/chinese_character_inverted
+NET=models/chinese_character_inverted
+DATASET=data/chinese_character_inverted
 ```
 9. Run this command to test your model on an image:
 ```
@@ -37,5 +37,15 @@ Video of my demonstration: https://youtu.be/VdPM8yIn-9w
 2. After you download the data, you need to organize the data into respective folders for their class.
       For this version of the model, you also need to invert all the photos.
       To do this, use pillow to loop through the photos and invert them all.
-3. If able, train your model using your Jetson Nano. If you are unable to, upload your data to Google Drive and use Google Caloboratory to train your model.
+3. If able, train your model using your Jetson Nano. If you are unable to, upload your data to Google Drive and use Google Calaboratory to train your model.
+   If you must use Google Calaboratory, be sure to download the model and put it into models/chinese_character_inverted.
 4. After training your model, be sure the export the model to ONNX.
+   Make you are in python/training/classification and run:
+   ```
+python3 onnx_export.py --model=models/chinese_character_inverted
+   ```
+   If you run into issues while exporting your model to ONNX, open a docker container and do he same thing. Command to open the docker container:
+```
+./docker/run.sh
+```
+5. Now you can run the model as previously stated.
