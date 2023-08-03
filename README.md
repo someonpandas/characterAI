@@ -7,10 +7,23 @@ The model is a re-trained version of the ResNet-18 model and was trained on an i
 2. Download the model.pth.tar files:
    model.pth.tar: https://drive.google.com/file/d/16PlL_Pz6d0QKLztq8xe017JCY99YOt2z/view?usp=sharing
 3. Download this folder (testing images): https://drive.google.com/drive/folders/1AJYann2UZXb3ldXdVuL4jaFS5wxKIurp?usp=sharing
-4. Put your models into jetson-inference/python/training/classification/models/chinese_character_inverted
-5. Put your data into jetson-inference/python/training/classification/data
-6. Open up terminal.
-7. Make sure that you are in the jetson-inference/python/training/classification while running this model. Use this command to move to that directory:
+4. Put your model into jetson-inference/python/training/classification/models/chinese_character_inverted
+5. Now you can run the model as previously stated.
+7. Put your data into jetson-inference/python/training/classification/data
+8. Open up terminal.
+9. Export your model to ONNX:
+   Make you are in python/training/classification and run:
+```
+python3 onnx_export.py --model=models/chinese_character_inverted
+```
+   If you run into issues while exporting your model to ONNX, open a docker container and do the same thing. Command to open the docker container:
+   
+```
+./docker/run.sh
+```
+
+   Be sure to exit the docker container before you run the model.
+10. Make sure that you are in the jetson-inference/python/training/classification while running this model. Use this command to move to that directory:
 ```
 cd ~/jetson-inference/python/training/classification
 ```
@@ -38,15 +51,3 @@ Video of my demonstration: https://youtu.be/VdPM8yIn-9w
       To do this, use pillow to loop through the photos and invert them all.
 3. If able, train your model using your Jetson Nano. If you are unable to, upload your data to Google Drive and use Google Calaboratory to train your model.
    If you must use Google Calaboratory, be sure to download the model and put it into models/chinese_character_inverted.
-4. After training your model, be sure the export the model to ONNX.
-   Make you are in python/training/classification and run:
-```
-python3 onnx_export.py --model=models/chinese_character_inverted
-```
-   If you run into issues while exporting your model to ONNX, open a docker container and do the same thing. Command to open the docker container:
-   
-```
-./docker/run.sh
-```
-
-5. Now you can run the model as previously stated.
