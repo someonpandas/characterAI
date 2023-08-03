@@ -30,6 +30,8 @@ imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output
 ```
 11. If you wish to test the model an image of your own, be sure to put your image into data/chinese_character_inverted. It is important to note that this model was trained on images with a white background and black text. The model might be incorrect if given an image where the contrast isn't high enough, or if the image has a different colored background.
 
+Video of my demonstration: https://youtu.be/VdPM8yIn-9w 
+
 # Replication
 1. If you wish to replicate this model, you must first download the Chinese MNIST dataset from https://www.kaggle.com/datasets/gpreda/chinese-mnist?datasetId=816649.
 2. After you download the data, you need to organize the data into respective folders for their class.
