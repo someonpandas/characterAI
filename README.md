@@ -44,7 +44,7 @@ Video of my demonstration: https://youtu.be/VdPM8yIn-9w
 ```
 python3 onnx_export.py --model=models/chinese_character_inverted
 ```
-   If you run into issues while exporting your model to ONNX, open a docker container and do he same thing. Command to open the docker container:
+   If you run into issues while exporting your model to ONNX, open a docker container and do the same thing. Command to open the docker container:
    
 ```
 ./docker/run.sh
