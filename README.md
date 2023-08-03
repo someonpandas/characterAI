@@ -41,11 +41,13 @@ Video of my demonstration: https://youtu.be/VdPM8yIn-9w
    If you must use Google Calaboratory, be sure to download the model and put it into models/chinese_character_inverted.
 4. After training your model, be sure the export the model to ONNX.
    Make you are in python/training/classification and run:
-   ```
+```
 python3 onnx_export.py --model=models/chinese_character_inverted
-   ```
+```
    If you run into issues while exporting your model to ONNX, open a docker container and do he same thing. Command to open the docker container:
+   
 ```
 ./docker/run.sh
 ```
+
 5. Now you can run the model as previously stated.
