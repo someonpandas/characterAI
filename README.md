@@ -12,6 +12,7 @@ The model is a re-trained version of the ResNet-18 model and was trained on an i
 7. Put your data into jetson-inference/python/training/classification/data
 8. Open up terminal.
 9. Export your model to ONNX:
+
    Make you are in python/training/classification and run:
 ```
 python3 onnx_export.py --model=models/chinese_character_inverted
