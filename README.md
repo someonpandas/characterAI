@@ -26,24 +26,25 @@ python3 onnx_export.py --model=models/chinese_character_inverted
 ```
 
    Be sure to exit the docker container before you run the model.
-10. Make sure that you are in the jetson-inference/python/training/classification while running this model. Use this command to move to that directory:
+
+9. Make sure that you are in the jetson-inference/python/training/classification while running this model. Use this command to move to that directory:
 ```
 cd ~/jetson-inference/python/training/classification
 ```
-8. Set these two variables in the terminal. They will store the locations of the data and models that you will be using:
+10. Set these two variables in the terminal. They will store the locations of the data and models that you will be using:
 ```
 NET=models/chinese_character_inverted
 DATASET=data/chinese_character_inverted
 ```
-9. Run this command to test your model on an image:
+11. Run this command to test your model on an image:
 ```
 imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/one/input_95_10_2.jpg character.jpg
 ```
-10. Run this command to test your model on a different image:
+12. Run this command to test your model on a different image:
 ```
 imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/{IMAGE PATH} character.jpg
 ```
-11. If you wish to test the model an image of your own, be sure to put your image into data/chinese_character_inverted. It is important to note that this model was trained on images with a white background and black text. The model might be incorrect if given an image where the contrast isn't high enough, or if the image has a different colored background.
+13. If you wish to test the model an image of your own, be sure to put your image into data/chinese_character_inverted. It is important to note that this model was trained on images with a white background and black text. The model might be incorrect if given an image where the contrast isn't high enough, or if the image has a different colored background.
 
 Video of my demonstration: https://youtu.be/VdPM8yIn-9w 
 
